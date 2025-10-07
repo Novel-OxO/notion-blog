@@ -17,6 +17,18 @@
   --color-sub-blue: #cce4ff;
   --color-sub-beige: #f2effe;
 
+  /* Gray Colors - 회색 계열 */
+  --color-gray-50: #e6edf9;
+  --color-gray-100: #d8e1ee;
+  --color-gray-200: #a8b4c7;
+  --color-gray-300: #7e889a;
+  --color-gray-400: #5d646f;
+  --color-gray-500: #3d424c;
+  --color-gray-600: #2a2f39;
+  --color-gray-700: #1f2026;
+  --color-gray-800: #171920;
+  --color-gray-900: #1a1a1a;
+
   /* Background */
   --color-bg-dark: #000000;
 }

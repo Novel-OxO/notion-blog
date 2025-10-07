@@ -1,13 +1,14 @@
-import { Button } from "@/components/ui/button";
+import { getPublicPosts } from "@/lib/notion";
+import PostList from "@/components/posts/PostList";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const { posts } = await getPublicPosts();
+
   return (
-    <div>
-      <Button>Click med </Button>
-      <div className="bg-primary-900 text-white">진한 보라색 배경</div>
-      <div className="bg-sub-green">초록색 배경</div>
-      <div className="hologram w-64 h-64 rounded-full"></div>
-      <div className="point-gradient w-64 h-64 rounded-full"></div>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen bg-gray-900">
+      <PostList posts={posts} />
     </div>
   );
 }
