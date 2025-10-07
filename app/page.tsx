@@ -1,19 +1,27 @@
-import { Button } from "@/components/ui/button";
 import { getPublicPosts } from "@/lib/notion";
 
 // ISR 60초마다 업데이트
 export const revalidate = 60;
 
 export default async function Home() {
+  // TODO 추후 카드형태로 리스트 구현 예정
   const { posts, hasMore, nextCursor } = await getPublicPosts();
-  console.log(posts);
 
   return (
-    <div>
-      <div className="bg-primary-900 text-white">진한 보라색 배경</div>
-      <div className="bg-sub-green">초록색 배경</div>
-      <div className="hologram w-64 h-64 rounded-full"></div>
-      <div className="point-gradient w-64 h-64 rounded-full"></div>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h1 className="text-4xl font-bold mb-8 text-white">최신 게시글</h1>
+      {/* TODO: 게시글 카드 리스트 구현 예정 */}
+      <div className="space-y-4">
+        {posts.map((post) => (
+          <div
+            key={post.id}
+            className="p-4 border border-primary-900/50 bg-primary-900/5 rounded-lg hover:border-primary-700/50 transition-colors"
+          >
+            <h2 className="text-xl font-semibold text-white">{post.title}</h2>
+            <p className="text-primary-300/80">{post.summary}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
