@@ -1,5 +1,4 @@
 import Link from "next/link";
-import SearchBar from "./SearchBar";
 
 export default function Header() {
   return (
@@ -9,10 +8,6 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <div className="text-2xl font-bold text-primary-900 italic tracking-wide">Novel Blog</div>
           </Link>
-
-          <div className="hidden md:block w-80">
-            <SearchBar />
-          </div>
         </div>
       </div>
     </header>
