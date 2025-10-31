@@ -88,15 +88,15 @@ export default function TableOfContents({ markdown }: TableOfContentsProps) {
 
   return (
     <nav className="sticky top-24">
-      <div className="bg-gray-600 rounded-lg p-6 border border-gray-700">
-        <h2 className="text-lg font-bold text-primary-900 mb-4">On this page</h2>
+      <div className="bg-neutral-95 rounded-lg p-6 border border-neutral-80">
+        <h2 className="text-lg font-bold text-mint-40 mb-4">On this page</h2>
         <ul className="space-y-2">
           {toc.map(({ id, title, level }) => (
             <li key={id} style={{ paddingLeft: `${(level - 1) * 12}px` }} className="transition-colors">
               <button
                 onClick={(e) => handleClick(e, id)}
-                className={`text-left cursor-pointer text-sm hover:text-primary-900 transition-colors w-full ${
-                  activeId === id ? "text-primary-900 font-semibold" : "text-gray-200"
+                className={`text-left cursor-pointer text-sm hover:text-mint-40 transition-colors w-full ${
+                  activeId === id ? "text-mint-40 font-semibold" : "text-neutral-30"
                 }`}
               >
                 {title}

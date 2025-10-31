@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fxts/core':
+        specifier: ^1.19.0
+        version: 1.19.0
       '@mdx-js/loader':
         specifier: ^3.1.1
         version: 3.1.1
@@ -178,6 +181,9 @@ packages:
   '@eslint/plugin-kit@0.4.0':
     resolution: {integrity: sha512-sB5uyeq+dwCWyPi31B2gQlVlo+j5brPlWx4yZBrEaRo/nhdDE8Xke1gsGgtiBdaBTxuTkceLVuVt/pclrasb0A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fxts/core@1.19.0':
+    resolution: {integrity: sha512-8vWBhYGwn258i5TalQin0uzmAJI9qgq8nXjf1PLd8DHjlcs5bfqyZVT1FHqnBVyAH3ojjfLQ2Zb2+oisG2aTcQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2696,6 +2702,10 @@ snapshots:
     dependencies:
       '@eslint/core': 0.16.0
       levn: 0.4.1
+
+  '@fxts/core@1.19.0':
+    dependencies:
+      tslib: 2.8.1
 
   '@humanfs/core@0.19.1': {}
 

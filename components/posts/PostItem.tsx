@@ -17,9 +17,9 @@ export default function PostItem({ post }: PostItemProps) {
 
   return (
     <Link href={`/post/${slug}`} className="block group h-full">
-      <Card className="overflow-hidden bg-gray-700 border-gray-800 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col p-0">
+      <Card className="overflow-hidden bg-card border-border transition-all duration-300 hover:-translate-y-1 h-full flex flex-col p-0">
         {thumbnail && (
-          <div className="relative w-full h-48 overflow-hidden bg-gray-800 flex-shrink-0">
+          <div className="relative w-full h-48 overflow-hidden bg-neutral-80 flex-shrink-0">
             <Image
               src={thumbnail}
               alt={title}
@@ -32,8 +32,8 @@ export default function PostItem({ post }: PostItemProps) {
 
         <div className="flex flex-col flex-grow p-6 gap-4">
           <div className="flex flex-col gap-3">
-            <CardTitle className="text-xl text-gray-50  transition-colors line-clamp-1">{title}</CardTitle>
-            {summary && <CardDescription className="line-clamp-3 text-gray-200">{summary}</CardDescription>}
+            <CardTitle className="text-xl transition-colors line-clamp-1">{title}</CardTitle>
+            {summary && <CardDescription className="line-clamp-3">{summary}</CardDescription>}
           </div>
 
           <div className="mt-auto">
