@@ -7,7 +7,7 @@ interface AuthorProps {
   textClassName?: string;
 }
 
-export default function Author({ author, imageSize = 24, textClassName = "text-sm text-gray-100" }: AuthorProps) {
+export default function Author({ author, imageSize = 24, textClassName = "text-sm text-netural-95" }: AuthorProps) {
   return (
     <div className="flex items-center gap-2">
       {author.profileImageUrl && (

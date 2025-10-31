@@ -40,11 +40,11 @@ export default async function PostDetailPage({ params }: { params: Promise<{ slu
     return (
       <div className="container mx-auto px-4 py-20 text-center">
         <div className="max-w-md mx-auto">
-          <h1 className="text-3xl font-bold text-gray-50 mb-4">포스트를 찾을 수 없습니다</h1>
-          <p className="text-gray-300 mb-8">요청하신 포스트가 존재하지 않거나 삭제되었습니다.</p>
+          <h1 className="text-3xl font-bold mb-4">포스트를 찾을 수 없습니다</h1>
+          <p className="text-muted-foreground mb-8">요청하신 포스트가 존재하지 않거나 삭제되었습니다.</p>
           <Link
             href="/"
-            className="inline-block px-6 py-3 bg-primary-900 text-gray-50 rounded-lg hover:bg-primary-700 transition-colors font-medium"
+            className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity font-medium"
           >
             홈으로 돌아가기
           </Link>
@@ -56,40 +56,23 @@ export default async function PostDetailPage({ params }: { params: Promise<{ slu
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <article className="max-w-3xl mx-auto">
-        {/* 헤더 섹션 */}
         <header className="mb-8 sm:mb-12">
-          {/* 카테고리 */}
-          {post.category && (
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 bg-primary-900 text-gray-50 rounded-md font-medium text-sm">
-                {post.category}
-              </span>
-            </div>
-          )}
-
           {/* 제목 */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 mb-4 sm:mb-6 ">{post.title}</h1>
-
-          {/* 요약 */}
-          {post.summary && <p className="text-lg sm:text-xl text-gray-50 mb-6 leading-relaxed">{post.summary}</p>}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mint-40 mb-4 sm:mb-6">{post.title}</h1>
 
           {/* 메타 정보 */}
-          <div className="flex flex-wrap items-center gap-4 pb-6 border-b border-gray-700">
+          <div className="flex flex-wrap items-center gap-4 pb-6 border-b border-border">
             {post.author && (
-              <Author
-                author={post.author}
-                imageSize={32}
-                textClassName="text-sm sm:text-base text-gray-100 font-medium"
-              />
+              <Author author={post.author} imageSize={32} textClassName="text-sm sm:text-base font-medium" />
             )}
-            <PublishedDate date={post.date} className="text-sm sm:text-base text-gray-200" />
+            <PublishedDate date={post.date} className="text-sm sm:text-base text-muted-foreground" />
           </div>
 
           {/* 태그 */}
           {post.tags && post.tags.length > 0 && (
             <Tag
               tags={post.tags}
-              className="px-3 py-1 bg-primary-700 text-gray-700 rounded-full text-sm font-medium"
+              className="px-3 py-1 bg-yellow-bg-1 text-yellow-1 rounded-full text-sm font-medium"
               containerClassName="flex flex-wrap gap-2 mt-6"
             />
           )}
@@ -97,7 +80,7 @@ export default async function PostDetailPage({ params }: { params: Promise<{ slu
 
         {/* 썸네일 */}
         {post.thumbnail && (
-          <div className="relative w-full h-64 sm:h-96 mb-8 sm:mb-12 rounded-lg overflow-hidden bg-gray-800">
+          <div className="relative w-full h-64 sm:h-96 mb-8 sm:mb-12 rounded-lg overflow-hidden bg-neutral-95">
             <Image
               src={post.thumbnail}
               alt={post.title}
@@ -110,7 +93,7 @@ export default async function PostDetailPage({ params }: { params: Promise<{ slu
         )}
 
         {/* 본문 */}
-        <div className="prose prose-lg prose-neutral dark:prose-invert prose-headings:scroll-mt-24 max-w-none prose-headings:text-primary-900 prose-p:text-gray-100 prose-p:my-0 prose-li:text-gray-100 prose-strong:text-primary-900 prose-a:text-blue-400 hover:prose-a:text-blue-300 prose-code:text-sub-green prose-pre:bg-gray-800 prose-pre:border prose-pre:border-gray-700 prose-blockquote:border-l-primary-900 prose-blockquote:text-gray-300 prose-img:rounded-lg">
+        <div className="prose prose-lg prose-neutral dark:prose-invert prose-headings:scroll-mt-24 max-w-none prose-headings:text-mint-40 prose-headings:my-4 prose-p:text-neutral-95 prose-p:my-0 prose-li:text-neutral-95 prose-li:marker:text-black prose-strong:font-bold prose-a:text-blue-1 hover:prose-a:text-mint-30 prose-code:text-mint-40 prose-pre:bg-neutral-95 prose-pre:border prose-pre:border-neutral-80 prose-blockquote:border-l-mint-40 prose-blockquote:text-neutral-95 prose-img:rounded-lg">
           <MDXRemote
             source={markdown}
             options={{
@@ -122,11 +105,10 @@ export default async function PostDetailPage({ params }: { params: Promise<{ slu
           />
         </div>
 
-        {/* 하단 구분선 및 네비게이션 영역 */}
-        <div className="mt-12 sm:mt-16 pt-8 border-t border-gray-500">
+        <div className="mt-12 sm:mt-16 pt-8 border-t border-neutral-50">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-gray-100 rounded-lg hover:bg-gray-600 transition-colors font-medium"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-95 text-neutral-10 rounded-lg hover:bg-neutral-90 transition-colors font-medium"
           >
             <svg
               className="w-5 h-5"
@@ -137,7 +119,7 @@ export default async function PostDetailPage({ params }: { params: Promise<{ slu
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            목록으로 돌아가기
+            홈으로
           </Link>
         </div>
       </article>

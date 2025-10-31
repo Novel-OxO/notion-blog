@@ -1,9 +1,10 @@
 "use client";
 
 import { Post } from "@/types/post";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import PostItem from "./PostItem";
 import Categories from "./Categories";
+import { pipe, map, filter, toArray } from "@fxts/core";
 
 interface PostListProps {
   posts: Post[];
@@ -11,12 +12,32 @@ interface PostListProps {
 
 export default function PostList({ posts }: PostListProps) {
   const [activeCategory, setActiveCategory] = useState("All");
-  const categories = new Set([
-    "All",
-    ...posts.map((post) => post.category).filter((category) => category !== undefined),
-  ]);
 
-  const filteredPosts = activeCategory === "All" ? posts : posts.filter((post) => post.category === activeCategory);
+  const categories = useMemo(
+    () =>
+      new Set([
+        "All",
+        ...pipe(
+          posts,
+          map((post) => post.category),
+          filter((category): category is string => category !== undefined),
+          toArray,
+        ),
+      ]),
+    [posts],
+  );
+
+  const filteredPosts = useMemo(
+    () =>
+      activeCategory === "All"
+        ? posts
+        : pipe(
+            posts,
+            filter((post) => post.category === activeCategory),
+            toArray,
+          ),
+    [posts, activeCategory],
+  );
 
   return (
     <div className="mb-8">

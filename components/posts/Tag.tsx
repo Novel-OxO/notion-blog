@@ -6,7 +6,7 @@ interface TagProps {
 
 export default function Tag({
   tags,
-  className = "px-2 py-1 bg-gray-600 text-gray-200 rounded text-xs font-medium",
+  className = "px-2 py-1 bg-yellow-bg-1 text-yellow-1 rounded text-xs font-medium",
   containerClassName = "flex flex-wrap gap-2 mb-4",
 }: TagProps) {
   if (!tags || tags.length === 0) return null;

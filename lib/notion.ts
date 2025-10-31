@@ -179,6 +179,12 @@ export async function getPublicPosts(nextCursor?: string) {
         equals: "Public",
       },
     },
+    sorts: [
+      {
+        property: "date",
+        direction: "descending",
+      },
+    ],
     ...(nextCursor ? { start_cursor: nextCursor } : {}),
   });
 

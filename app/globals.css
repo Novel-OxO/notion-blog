@@ -6,31 +6,55 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* Main Colors - 보라색 계열 */
-  --color-primary-900: #6b6be1;
-  --color-primary-700: #a9a9ee;
-  --color-primary-500: #c2c2f3;
-  --color-primary-300: #dfdffa;
+  /* Base colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
 
-  /* Sub Colors - 포인트 컬러 */
-  --color-sub-green: #bfebdd;
-  --color-sub-blue: #cce4ff;
-  --color-sub-beige: #f2effe;
+  /* Neutral */
+  --color-neutral-1: #f9f9fa;
+  --color-neutral-3: #f1f2f3;
+  --color-neutral-5: #eaebec;
+  --color-neutral-10: #dbdcdf;
+  --color-neutral-20: #cccdd1;
+  --color-neutral-30: #aeb0b6;
+  --color-neutral-35: #989ba2;
+  --color-neutral-40: #878a93;
+  --color-neutral-50: #70737c;
+  --color-neutral-60: #5a5c63;
+  --color-neutral-70: #46474c;
+  --color-neutral-75: #37383c;
+  --color-neutral-80: #27282c;
+  --color-neutral-90: #212225;
+  --color-neutral-95: #1b1c1e;
 
-  /* Gray Colors - 회색 계열 */
-  --color-gray-50: #e6edf9;
-  --color-gray-100: #d8e1ee;
-  --color-gray-200: #a8b4c7;
-  --color-gray-300: #7e889a;
-  --color-gray-400: #5d646f;
-  --color-gray-500: #3d424c;
-  --color-gray-600: #2a2f39;
-  --color-gray-700: #1f2026;
-  --color-gray-800: #171920;
-  --color-gray-900: #1a1a1a;
+  /* Red */
+  --color-red-1: #fffaf7;
+  --color-red-5: #ffebe0;
+  --color-red-10: #fcaea9;
+  --color-red-20: #ff8f87;
+  --color-red-30: #fe7a70;
+  --color-red-40: #ff6c62;
+  --color-red-50: #f1564b;
 
-  /* Background */
-  --color-bg-dark: #000000;
+  /* Mint */
+  --color-mint-1: #c6fae6;
+  --color-mint-10: #98f9d5;
+  --color-mint-20: #29ffb0;
+  --color-mint-30: #08f29b;
+  --color-mint-40: #0dd78c;
+  --color-mint-50: #1ba673;
+
+  /* Blue */
+  --color-blue-1: #418cc3;
+  --color-blue-bg-1: #e8f1ff;
+
+  /* Purple */
+  --color-purple-1: #9c6bb3;
+  --color-purple-bg-1: #f1e8ff;
+
+  /* Yellow */
+  --color-yellow-1: #d77b0f;
+  --color-yellow-bg-1: #fff3c2;
 }
 
 @theme inline {
@@ -75,71 +99,71 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --background: #ffffff;
+  --foreground: #212225;
+  --card: #ffffff;
+  --card-foreground: #212225;
+  --popover: #ffffff;
+  --popover-foreground: #212225;
+  --primary: #9c6bb3;
+  --primary-foreground: #ffffff;
+  --secondary: #eaebec;
+  --secondary-foreground: #212225;
+  --muted: #f1f2f3;
+  --muted-foreground: #70737c;
+  --accent: #08f29b;
+  --accent-foreground: #212225;
+  --destructive: #ff6c62;
+  --border: #dbdcdf;
+  --input: #dbdcdf;
+  --ring: #9c6bb3;
+  --chart-1: #9c6bb3;
+  --chart-2: #418cc3;
+  --chart-3: #08f29b;
+  --chart-4: #d77b0f;
+  --chart-5: #ff6c62;
+  --sidebar: #f9f9fa;
+  --sidebar-foreground: #212225;
+  --sidebar-primary: #9c6bb3;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f2f3;
+  --sidebar-accent-foreground: #212225;
+  --sidebar-border: #dbdcdf;
+  --sidebar-ring: #9c6bb3;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #1b1c1e;
+  --foreground: #f9f9fa;
+  --card: #27282c;
+  --card-foreground: #f9f9fa;
+  --popover: #27282c;
+  --popover-foreground: #f9f9fa;
+  --primary: #9c6bb3;
+  --primary-foreground: #ffffff;
+  --secondary: #37383c;
+  --secondary-foreground: #f9f9fa;
+  --muted: #37383c;
+  --muted-foreground: #aeb0b6;
+  --accent: #0dd78c;
+  --accent-foreground: #1b1c1e;
+  --destructive: #ff6c62;
+  --border: #46474c;
+  --input: #46474c;
+  --ring: #9c6bb3;
+  --chart-1: #9c6bb3;
+  --chart-2: #418cc3;
+  --chart-3: #0dd78c;
+  --chart-4: #d77b0f;
+  --chart-5: #ff6c62;
+  --sidebar: #27282c;
+  --sidebar-foreground: #f9f9fa;
+  --sidebar-primary: #9c6bb3;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #37383c;
+  --sidebar-accent-foreground: #f9f9fa;
+  --sidebar-border: #46474c;
+  --sidebar-ring: #9c6bb3;
 }
 
 @layer base {
@@ -148,26 +172,5 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-
-  /* Hologram Gradient */
-  .hologram {
-    background: conic-gradient(
-      from 0deg at 50% 50%,
-      #fff9e6 0deg,
-      #e8f4ff 45deg,
-      #d8f8e8 90deg,
-      #e8d2ff 135deg,
-      #f0e8ff 180deg,
-      #e8f4ff 225deg,
-      #d8f8e8 270deg,
-      #e8d2ff 315deg,
-      #fff9e6 360deg
-    );
-  }
-
-  /* Point Gradient */
-  .point-gradient {
-    background: linear-gradient(to right, #f0f8ff, #e8d2ff);
   }
 }
