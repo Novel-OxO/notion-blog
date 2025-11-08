@@ -78,22 +78,8 @@ export default async function PostDetailPage({ params }: { params: Promise<{ slu
           )}
         </header>
 
-        {/* 썸네일 */}
-        {post.thumbnail && (
-          <div className="relative w-full h-64 sm:h-96 mb-8 sm:mb-12 rounded-lg overflow-hidden bg-neutral-95">
-            <Image
-              src={post.thumbnail}
-              alt={post.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-              priority
-            />
-          </div>
-        )}
-
         {/* 본문 */}
-        <div className="prose prose-lg prose-neutral dark:prose-invert prose-headings:scroll-mt-24 max-w-none prose-headings:text-mint-40 prose-headings:my-4 prose-p:text-neutral-95 prose-p:my-0 prose-li:text-neutral-95 prose-li:marker:text-black prose-strong:font-bold prose-a:text-blue-1 hover:prose-a:text-mint-30 prose-code:text-mint-40 prose-pre:bg-neutral-95 prose-pre:border prose-pre:border-neutral-80 prose-blockquote:border-l-mint-40 prose-blockquote:text-neutral-95 prose-img:rounded-lg">
+        <div className="prose prose-lg prose-neutral dark:prose-invert prose-headings:scroll-mt-24 max-w-none prose-headings:text-mint-40 prose-headings:my-4 prose-p:text-neutral-95 prose-p:my-4 prose-li:text-neutral-95 prose-li:marker:text-black prose-strong:font-bold prose-a:text-blue-1 hover:prose-a:text-mint-30 prose-code:text-mint-40 prose-pre:bg-neutral-95 prose-pre:border prose-pre:border-neutral-80 prose-blockquote:border-l-mint-40 prose-blockquote:text-neutral-95 prose-img:rounded-lg">
           <MDXRemote
             source={markdown}
             options={{
